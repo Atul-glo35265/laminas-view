@@ -185,12 +185,10 @@ class FlashMessengerTest extends TestCase
         $this->assertEquals($displayInfoAssertion, $displayInfo);
     }
 
-    /**
-     * @runInSeparateProcess
-     * @preserveGlobalState disabled
-     */
     public function testCanDisplayListOfCurrentMessages(): void
     {
+        $this->helper->clearMessages();
+
         $displayInfoAssertion = '';
         $displayInfo          = $this->helper->renderCurrent('info');
         $this->assertEquals($displayInfoAssertion, $displayInfo);
